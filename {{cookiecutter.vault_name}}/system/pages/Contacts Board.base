@@ -1,0 +1,21 @@
+views:
+  - type: table
+    name: All Contacts
+    filters:
+      and:
+        - categories.contains(link("Contacts"))
+        - '!file.inFolder("system/templates")'
+    order:
+      - file.name
+      - company
+      - role
+      - email
+      - subjects
+      - status
+    sort:
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 200
+      company: 150
+      subjects: 300

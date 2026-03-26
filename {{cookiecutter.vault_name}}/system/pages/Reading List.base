@@ -1,0 +1,22 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - categories.contains(link("Reading List"))
+        - '!file.inFolder("system/templates")'
+    order:
+      - file.name
+      - file.ctime
+      - categories
+      - source
+      - status
+      - subjects
+      - type
+      - summary
+      - title
+    sort:
+      - property: summary
+        direction: DESC
+    columnSize:
+      file.name: 427

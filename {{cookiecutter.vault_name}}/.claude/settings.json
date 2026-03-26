@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'STARTUP TASK: Check inbox/ for unprocessed notes. If any files exist (excluding CLAUDE.md), process each one: determine the best category and subjects, add YAML frontmatter with [[wikilink]] properties, and move to notes/ (or journal/YYYY/MM/ for journal entries, using year-based hierarchy). Report what was processed. If inbox is empty, say so briefly and move on.'"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/vault-hygiene.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - categories.contains(link("Projects"))
+        - '!file.inFolder("system/templates")'
+    order:
+      - file.name
+      - categories
+      - start-date
+      - end-date
+      - priority
+      - status
+      - subjects
+    columnSize:
+      file.name: 278
+  - type: table
+    name: View

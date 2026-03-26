@@ -1,0 +1,18 @@
+{
+  "vault_name": "my-second-brain",
+  "author_name": "Your Name",
+  "year": "2026",
+  "_copy_without_render": [
+    "system/templates/*",
+    ".claude/*",
+    ".obsidian/*",
+    "categories/*",
+    "subjects/*",
+    "system/pages/*",
+    "inbox/*",
+    "notes/*",
+    "journal/*",
+    ".gitignore",
+    ".claudeignore"
+  ]
+}
