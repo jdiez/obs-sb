@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-03-27
+
+### Added
+
+- Auto-journal core rule: today's daily journal is automatically updated whenever a note is created or modified — no explicit request needed (CLAUDE.md Core Rule #6)
+
 ## [1.0.0] - 2026-03-26
 
 ### Added

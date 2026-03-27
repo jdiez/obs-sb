@@ -8,7 +8,7 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/) template for generating a
 - **16 category containers** with Dataview queries
 - **7 starter subject containers** (AI, Business, Psychology, Philosophy, Health, Productivity, Creativity)
 - **Dashboard pages** (Project Board, Reading List, Contacts Board) in both Dataview and Bases formats
-- **Claude Code integration** with CLAUDE.md context files and automatic inbox processing hooks
+- **Claude Code integration** with CLAUDE.md context files, automatic inbox processing hooks, and auto-journaling on every note change
 - **Journal scaffolding** with year-based hierarchy (daily, weekly, monthly)
 - **Full Calendar support** for meetings and dated tasks
 - **Obsidian plugin configuration** pre-configured for Dataview, Tasks, Templater, Full Calendar, and Periodic Notes

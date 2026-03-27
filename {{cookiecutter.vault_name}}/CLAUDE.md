@@ -32,6 +32,7 @@ An Obsidian vault organized as a second brain using the **Properties** pattern. 
 3. **Every note has YAML frontmatter** with `categories`, `subjects`, `status`, and `type` properties.
 4. **Categories and subjects use `[[wikilinks]]`** in YAML — this powers Dataview queries.
 5. **Never create subfolders in `notes/`.** If something needs grouping, create a category or subject.
+6. **Auto-update today's journal on every note change.** Whenever a note is created or modified, append a brief entry to today's daily journal (`journal/YYYY/MM/YYYY-MM-DD.md`) summarizing what was added or changed. Create the journal file from template if it doesn't exist. This happens automatically — no explicit request needed.
 
 ## YAML Frontmatter Convention
 
