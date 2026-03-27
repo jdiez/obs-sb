@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2026-03-27
+
+### Added
+
+- Post-generate hook (`hooks/post_gen_project.py`): auto-runs `git init`, creates today's journal entry, prints setup instructions
+- Dataview Cheatsheet page with 10 ready-to-use queries (recent notes, orphans, overdue tasks, meetings this week, etc.)
+- CSS snippets directory (`.obsidian/snippets/dataview-tables.css`) for Dataview table styling
+- New cookiecutter variables: `extra_subjects` (comma-separated) and `enable_claude` (boolean)
+- 3 new Obsidian Bases dashboards: Goals Board, Meetings This Week, Recently Modified (both `.md` and `.base`)
+- Review Checklist page with weekly, monthly, and quarterly review checklists
+- 3 sample notes (Example Literature Note, Example Project, Example Meeting) demonstrating proper frontmatter
+- `.github/` directory: issue templates (bug report, feature request), PR template
+- `CONTRIBUTING.md` with guidelines for adding templates and testing
+- `Makefile` with `new-vault`, `test`, and `clean` targets
+
 ## [1.1.0] - 2026-03-27
 
 ### Added

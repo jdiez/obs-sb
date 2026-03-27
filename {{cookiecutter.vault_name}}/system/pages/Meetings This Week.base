@@ -1,0 +1,17 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - categories.contains(link("Meetings"))
+        - '!file.inFolder("system/templates")'
+    order:
+      - file.name
+      - date
+      - startTime
+      - endTime
+      - status
+    columnSize:
+      file.name: 278
+  - type: table
+    name: View

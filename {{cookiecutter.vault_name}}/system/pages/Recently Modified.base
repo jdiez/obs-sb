@@ -1,0 +1,17 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.inFolder("notes")
+    order:
+      - file.name
+      - file.mtime
+      - type
+      - status
+      - categories
+      - subjects
+    columnSize:
+      file.name: 278
+  - type: table
+    name: View

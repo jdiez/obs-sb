@@ -2,6 +2,8 @@
   "vault_name": "my-second-brain",
   "author_name": "Your Name",
   "year": "2026",
+  "extra_subjects": "",
+  "enable_claude": true,
   "_copy_without_render": [
     "system/templates/*",
     ".claude/*",

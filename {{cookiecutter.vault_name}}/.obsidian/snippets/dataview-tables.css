@@ -1,0 +1,56 @@
+/* Dataview table styling — enable in Settings → Appearance → CSS Snippets */
+
+/* Clean table borders */
+.dataview.table-view-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dataview.table-view-table thead tr {
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+
+.dataview.table-view-table tbody tr {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.dataview.table-view-table tbody tr:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* Compact cell padding */
+.dataview.table-view-table th,
+.dataview.table-view-table td {
+  padding: 6px 12px;
+  text-align: left;
+}
+
+/* Header styling */
+.dataview.table-view-table th {
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* Alternating row colors (subtle) */
+.dataview.table-view-table tbody tr:nth-child(even) {
+  background-color: var(--background-secondary);
+}
+
+/* Status badges */
+.dataview.table-view-table td:has(> span) span {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* Dataview list styling */
+.dataview.list-view-ul {
+  padding-left: 1.5em;
+}
+
+.dataview.list-view-ul li {
+  margin-bottom: 4px;
+}

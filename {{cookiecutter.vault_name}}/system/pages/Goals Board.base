@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - categories.contains(link("Goals"))
+        - '!file.inFolder("system/templates")'
+    order:
+      - file.name
+      - status
+      - target-date
+      - subjects
+    columnSize:
+      file.name: 278
+  - type: table
+    name: View
