@@ -1,3 +1,22 @@
+```
+            ●       ●       ●
+           ╱│╲     ╱│╲     ╱│╲
+          ╱ │ ╲   ╱ │ ╲   ╱ │ ╲
+         ●──●──●─●──●──●─●──●──●
+          ╲ │ ╱   ╲ │ ╱   ╲ │ ╱
+           ╲│╱     ╲│╱     ╲│╱
+            ●       ●       ●
+           ╱│╲     ╱│╲     ╱│╲
+          ╱ │ ╲   ╱ │ ╲   ╱ │ ╲
+         ●──●──●─●──●──●─●──●──●
+
+       ┌──────────────────────────┐
+       │  obs-sb                   │
+       │  Obsidian · Second Brain  │
+       │  Cookiecutter Template    │
+       └──────────────────────────┘
+```
+
 # Obsidian Second Brain — Cookiecutter Template
 
 A [cookiecutter](https://cookiecutter.readthedocs.io/) template for generating an Obsidian vault organized as a second brain using the **Properties** pattern.
