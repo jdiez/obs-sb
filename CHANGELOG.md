@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2026-03-28
+
+### Added
+
+- Journal reminder hook (`.claude/hooks/journal-reminder.sh`): PostToolUse hook that prompts Claude to update today's journal whenever a note in `notes/` is created or modified via Write or Edit
+- `.claude/settings.json` with PostToolUse hook wiring for Write and Edit matchers
+
 ## [1.3.0] - 2026-03-28
 
 ### Added
