@@ -16,6 +16,6 @@ role: ""
 ```dataview
 TABLE status, categories, date
 FROM "notes"
-WHERE contains(subjects, this.file.link)
+WHERE contains(people, this.file.link)
 SORT date DESC
 ```

@@ -2,6 +2,7 @@
 categories:
   - "[[Meetings]]"
 subjects: []
+people: []
 status: complete
 type: single
 date: {{date:YYYY-MM-DD}}

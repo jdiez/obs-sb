@@ -13,7 +13,7 @@ cd obs-sb
 cookiecutter . --no-input
 
 # Or with custom variables
-cookiecutter . vault_name=test-vault year=2026
+cookiecutter . vault_name=test-vault
 ```
 
 ## Guidelines

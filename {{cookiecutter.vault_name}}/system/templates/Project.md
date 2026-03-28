@@ -9,7 +9,7 @@ start-date: {{date:YYYY-MM-DD}}
 target-date: ""
 end-date: ""
 sprint: ""
-collaborators: []
+people: []
 ---
 
 # {{title}}

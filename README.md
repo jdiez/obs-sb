@@ -56,7 +56,7 @@ You'll be prompted for:
 |----------|---------|-------------|
 | `vault_name` | `my-second-brain` | Name of your vault folder |
 | `author_name` | `Your Name` | Your name (used in README) |
-| `year` | `2026` | Starting year for journal folder structure |
+| `year` | *(current year)* | Starting year for journal folder structure |
 | `extra_subjects` | *(empty)* | Comma-separated subjects to generate (e.g., `Science, Engineering, Finance`) |
 | `enable_claude` | `true` | Include Claude Code integration (`.claude/`, `CLAUDE.md`, `.claudeignore`) |
 

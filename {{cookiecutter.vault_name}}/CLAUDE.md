@@ -44,6 +44,8 @@ categories:
   - "[[Category Name]]"
 subjects:
   - "[[Subject Name]]"
+people:
+  - "[[Contact Name]]"
 status: idea | in-progress | ready | published | archived (knowledge notes)
         backlog | planning | active | on-hold | done | archived (projects)
         todo | in-progress | done | blocked (task items)
@@ -52,7 +54,8 @@ type: note-type-slug
 ```
 
 - `categories` — links to files in `categories/` (note type: literature note, newsletter, etc.)
-- `subjects` — links to files in `subjects/` (topic: AI, Business, etc.)
+- `subjects` — links to files in `subjects/` (topic: AI, Business, etc.). **Subjects are topical only** — never put people here.
+- `people` — links to contact notes in `notes/` (people involved: attendees, collaborators, etc.). Use `[[Contact Name]]` wikilinks.
 - `status` — lifecycle stage
 - `type` — machine-readable type slug. **Exception:** Any note that must appear on the Full Calendar (meetings, scheduled tasks, events) uses `type: single`. Use `categories` to distinguish them (e.g., `[[Meetings]]`, `[[Task Items]]`).
 
@@ -77,7 +80,7 @@ allDay: false                    # true for all-day, false for timed events
 - **Processing inbox:** Read files in `inbox/`, assign categories/subjects, move to `notes/`.
 - **Bulk updates:** Update properties across multiple notes using Grep to find targets, then Edit.
 - **Journal summaries:** Read daily entries from `journal/YYYY/MM/` for a date range, produce weekly/monthly summary.
-- **Project management:** Projects, task items, and meetings are linked via `project` property. Projects have a `collaborators` field — use `[[Contact Name]]` wikilinks to link relevant contacts. See `system/pages/Project Board.md` for the dashboard. Projects use lean statuses: `backlog` → `planning` → `active` → `on-hold` → `done` → `archived`.
+- **Project management:** Projects, task items, and meetings are linked via `project` property. Projects use the `people` property — use `[[Contact Name]]` wikilinks to link relevant contacts. See `system/pages/Project Board.md` for the dashboard. Projects use lean statuses: `backlog` → `planning` → `active` → `on-hold` → `done` → `archived`.
 - **Dashboards are dual-format:** Every new dashboard in `system/pages/` must be created as both a `.md` file (Dataview queries) and a `.base` file (Obsidian Bases). Both coexist — Dataview and Bases run in parallel.
 - **Never modify `.obsidian/workspace.json`** — it changes with UI state.
 

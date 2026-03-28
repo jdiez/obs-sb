@@ -2,6 +2,7 @@
 categories:
   - "[[Task Items]]"
 subjects: []
+people: []
 status: todo
 type: task-item
 priority: medium

@@ -1,7 +1,7 @@
 {
   "vault_name": "my-second-brain",
   "author_name": "Your Name",
-  "year": "2026",
+  "year": "{% now 'local', '%Y' %}",
   "extra_subjects": "",
   "enable_claude": true,
   "_copy_without_render": [

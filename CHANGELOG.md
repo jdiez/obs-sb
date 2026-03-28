@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-03-28
+
+### Added
+
+- `people` YAML property on Meeting, Task Item, and Project templates — separates person references from topical subjects
+- `people` property documented in CLAUDE.md frontmatter convention with "subjects are topical only" guidance
+
+### Changed
+
+- Project template: `collaborators` property replaced with `people` for consistency across all note types
+- Contact card template: Dataview query uses `contains(people, this.file.link)` instead of `contains(subjects, this.file.link)`
+- CLAUDE.md: project management section references `people` instead of `collaborators`
+- `cookiecutter.json`: `year` default now uses `{% now 'local', '%Y' %}` for dynamic current year instead of hardcoded value
+- README: `year` variable table shows *(current year)* as default
+- CONTRIBUTING.md: removed hardcoded year from example command
+
 ## [1.2.0] - 2026-03-27
 
 ### Added
