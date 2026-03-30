@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - 2026-03-30
+
+### Added
+
+- Uncommitted changes SessionEnd hook (`.claude/hooks/uncommitted-changes.sh`): warns at session end if there are staged, modified, or untracked files not yet committed
+- Wired `uncommitted-changes.sh` into template's `.claude/settings.json` as a SessionEnd hook
+
 ## [1.5.0] - 2026-03-30
 
 ### Added
