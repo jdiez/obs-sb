@@ -11,6 +11,10 @@
           {
             "type": "command",
             "command": "bash .claude/hooks/vault-hygiene.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/review-overdue.sh"
           }
         ]
       }

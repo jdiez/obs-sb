@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-03-30
+
+### Added
+
+- Review overdue SessionStart hook (`.claude/hooks/review-overdue.sh`): checks at session start whether weekly or monthly journal reviews are overdue, prompts creation if missing. Self-healing — catches missed Sundays on Monday/Tuesday/etc.
+- Wired `review-overdue.sh` into template's `.claude/settings.json` as a SessionStart hook
+
 ## [1.4.0] - 2026-03-28
 
 ### Added
