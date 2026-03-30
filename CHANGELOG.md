@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0] - 2026-03-30
+
+### Added
+
+- "References in Notes" rule in root `CLAUDE.md` and `notes/CLAUDE.md`: every external citation must include a `## References` section with clickable URLs in `[Title](URL) — summary` format
+
 ## [1.6.0] - 2026-03-30
 
 ### Added

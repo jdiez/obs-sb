@@ -161,6 +161,12 @@ AI, Business, Psychology, Philosophy, Health, Productivity, Creativity
 - Journal weekly: `YYYY-[W]WW.md`
 - Journal monthly: `YYYY-MM.md`
 
+## References in Notes
+
+- When a note cites external sources (papers, articles, tools), include a `## References` section at the bottom.
+- Every reference must include a clickable URL/link — never cite without a link.
+- Format: `- [Title](URL) — one-line summary of relevance`
+
 ## Keeping This File Current
 
 This CLAUDE.md is loaded every session — no hook needed. When creating a new category, subject, or template, update the corresponding list above in the same operation. Stale registries cause duplicates.
