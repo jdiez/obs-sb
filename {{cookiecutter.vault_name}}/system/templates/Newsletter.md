@@ -4,6 +4,7 @@ categories:
 subjects: []
 status: idea
 type: newsletter
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

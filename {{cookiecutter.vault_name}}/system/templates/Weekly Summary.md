@@ -5,6 +5,7 @@ subjects: []
 status: complete
 type: weekly
 week: {{date:YYYY-[W]WW}}
+created: {{date:YYYY-MM-DD}}
 ---
 
 # Week {{date:YYYY-[W]WW}}

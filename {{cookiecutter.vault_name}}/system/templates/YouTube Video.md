@@ -4,6 +4,7 @@ categories:
 subjects: []
 status: idea
 type: youtube-video
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

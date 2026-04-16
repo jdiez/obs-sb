@@ -4,6 +4,7 @@ categories:
 subjects: []
 status: idea
 type: permanent-note
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

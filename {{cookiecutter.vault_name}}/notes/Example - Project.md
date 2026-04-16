@@ -11,6 +11,7 @@ target-date: 2026-04-01
 end-date: ""
 sprint: ""
 collaborators: []
+created: 2025-01-15
 ---
 
 # Set Up Second Brain

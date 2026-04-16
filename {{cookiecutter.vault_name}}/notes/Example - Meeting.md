@@ -12,6 +12,7 @@ endTime: "10:30"
 allDay: false
 attendees: []
 project: "[[Example - Project]]"
+created: 2025-01-15
 ---
 
 # Kickoff — Second Brain Setup

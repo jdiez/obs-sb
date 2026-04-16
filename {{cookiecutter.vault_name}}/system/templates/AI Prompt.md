@@ -4,6 +4,7 @@ categories:
 subjects: []
 status: idea
 type: ai-prompt
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

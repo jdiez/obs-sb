@@ -10,6 +10,7 @@ target-date: ""
 end-date: ""
 sprint: ""
 people: []
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

@@ -10,6 +10,7 @@ project: ""
 sprint: ""
 due-date: ""
 assigned-to: ""
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

@@ -9,6 +9,7 @@ title: "Building a Second Brain"
 summary: "A methodology for organizing digital information to enhance creativity and productivity."
 source: "https://www.buildingasecondbrain.com"
 author: "Tiago Forte"
+created: 2025-01-15
 ---
 
 # Building a Second Brain

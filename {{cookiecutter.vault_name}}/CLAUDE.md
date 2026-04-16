@@ -50,6 +50,7 @@ status: idea | in-progress | ready | published | archived (knowledge notes)
         backlog | planning | active | on-hold | done | archived (projects)
         todo | in-progress | done | blocked (task items)
 type: note-type-slug
+created: YYYY-MM-DD
 ---
 ```
 
@@ -57,6 +58,7 @@ type: note-type-slug
 - `subjects` — links to files in `subjects/` (topic: AI, Business, etc.). **Subjects are topical only** — never put people here.
 - `people` — links to contact notes in `notes/` (people involved: attendees, collaborators, etc.). Use `[[Contact Name]]` wikilinks.
 - `status` — lifecycle stage
+- `created` — date the note was created (auto-filled by Templater's `{{date:YYYY-MM-DD}}`)
 - `type` — machine-readable type slug. **Exception:** Any note that must appear on the Full Calendar (meetings, scheduled tasks, events) uses `type: single`. Use `categories` to distinguish them (e.g., `[[Meetings]]`, `[[Task Items]]`).
 
 ### Full Calendar Fields (required for calendar visibility)

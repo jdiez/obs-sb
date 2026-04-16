@@ -7,6 +7,7 @@ type: contact
 email: ""
 company: ""
 role: ""
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

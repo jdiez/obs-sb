@@ -8,6 +8,7 @@ title: ""
 summary: ""
 source: ""
 author: ""
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

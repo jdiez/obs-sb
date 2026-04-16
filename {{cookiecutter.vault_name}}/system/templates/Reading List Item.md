@@ -8,6 +8,7 @@ source-type: ""
 author: ""
 url: ""
 rating: ""
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

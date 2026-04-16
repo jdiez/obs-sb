@@ -4,6 +4,7 @@ categories:
 subjects: []
 status: idea
 type: author
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}

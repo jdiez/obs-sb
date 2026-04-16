@@ -6,6 +6,7 @@ status: idea
 type: goal
 priority: medium
 target-date: ""
+created: {{date:YYYY-MM-DD}}
 ---
 
 # {{title}}
