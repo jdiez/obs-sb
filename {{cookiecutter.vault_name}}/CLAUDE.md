@@ -98,6 +98,7 @@ allDay: false                    # true for all-day, false for timed events
 3. Flag overdue tasks (due-date past, status not done)
 4. If Sunday: prompt for weekly review
 5. If 1st of month: prompt for monthly review
+6. Generate previous day's journal reflections (if empty) — read "What I Did Today" from yesterday's journal entry and populate empty Reflections (cross-cutting insights, key learnings, connections between work items, strategic implications — use `###` subheadings per theme) and Key Decisions (non-trivial decisions with reasoning). Skip if yesterday's journal doesn't exist or sections are already populated.
 
 ## Review Cycles
 

@@ -29,7 +29,7 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/) template for generating a
 - **Dashboard pages** (Project Board, Reading List, Contacts Board, Goals Board, Meetings This Week, Recently Modified) in both Dataview and Bases formats
 - **Dataview Cheatsheet** with 10 ready-to-use queries (recent notes, orphan notes, overdue tasks, and more)
 - **Review Checklist** for weekly, monthly, and quarterly reviews
-- **Claude Code integration** (optional) with CLAUDE.md context files, automatic inbox processing hooks, auto-journaling on every note change, and self-healing review reminders (weekly/monthly)
+- **Claude Code integration** (optional) with CLAUDE.md context files, automatic inbox processing hooks, auto-journaling on every note change, self-healing review reminders (weekly/monthly), and auto-generated journal reflections from previous day's work
 - **3 sample notes** (Literature Note, Project, Meeting) showing proper frontmatter patterns
 - **CSS snippets** for Dataview table styling
 - **Journal scaffolding** with year-based hierarchy (daily, weekly, monthly)

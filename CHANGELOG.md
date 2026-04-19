@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0] - 2026-04-19
+
+### Added
+
+- Journal reflections SessionStart hook (`.claude/hooks/journal-reflections.sh`): checks at session start whether yesterday's journal entry has empty Reflections or Key Decisions sections, prompts Claude to auto-generate substantive content from the "What I Did Today" log — cross-cutting insights, key learnings, connections between work items, strategic implications, and non-trivial decisions with reasoning
+- Wired `journal-reflections.sh` into template's `.claude/settings.json` as a SessionStart hook
+- Session Start Checklist item #6 in CLAUDE.md: documents the journal reflections auto-generation behavior
+
 ## [1.7.0] - 2026-03-30
 
 ### Added

@@ -15,6 +15,10 @@
           {
             "type": "command",
             "command": "bash .claude/hooks/review-overdue.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/journal-reflections.sh"
           }
         ]
       }
