@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.0] - 2026-04-19
+
+### Added
+
+- **Raw Sources Archive** (`sources/` directory): immutable archive for original documents. Inbox processing now copies originals to `sources/` before transforming to `notes/`. Core Rule #7 in CLAUDE.md. `source-file` YAML property links processed notes back to their original.
+- **LLM Navigation Index** (`build-index.sh` SessionStart hook): auto-generates `index.md` at vault root cataloging all notes by category with one-line summaries. Enables fast LLM navigation without glob/grep. Core Rule #8 in CLAUDE.md.
+- **Wiki Lint** (`wiki-lint.sh` SessionStart hook): structural health-check detecting orphan notes (no inbound links) and stale in-progress notes (30+ days). CLAUDE.md documents additional LLM-driven semantic checks during reviews.
+- **Query-to-Note Workflow** (CLAUDE.md section): when an answer synthesizes 3+ sources or reveals non-obvious connections, offer to save as a permanent note with synthesis sources.
+- **Cognitive Governance** (CLAUDE.md section + template updates): epistemic quality rules for Literature Notes (core claim + what it argues against), Permanent Notes (cross-subject linking), Weekly Reflections (tensions/contradictions, updated beliefs), and overlapping source ingestion (confirmed/challenged/new structure).
+- **Deep Ingestion Cascade** (CLAUDE.md section): when a new note is created, update up to 5 related existing notes with cross-references. Scoped to avoid over-updating.
+- Updated Literature Note, Permanent Note, and Weekly Summary templates with cognitive governance scaffolding
+
 ## [1.8.0] - 2026-04-19
 
 ### Added

@@ -15,6 +15,10 @@ created: {{date:YYYY-MM-DD}}
 
 ## Summary
 
+## Core Claim
+
+## What It Argues Against
+
 ## Key Ideas
 
 -
@@ -25,4 +29,6 @@ created: {{date:YYYY-MM-DD}}
 
 ## Connections
 
+- Confirms:
+- Challenges:
 - Related to:

@@ -19,4 +19,4 @@ created: {{date:YYYY-MM-DD}}
 
 ## Related Notes
 
--
+- (must link 2+ notes from different subjects)

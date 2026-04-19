@@ -26,6 +26,14 @@ created: {{date:YYYY-MM-DD}}
 
 -
 
+## Tensions & Contradictions
+
+-
+
+## Updated Beliefs
+
+-
+
 ## Next Week's Priorities
 
 -

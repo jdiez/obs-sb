@@ -14,10 +14,12 @@ ALLOWED=(
   ".env"
   "CLAUDE.md"
   "README.md"
+  "index.md"
   "categories"
   "inbox"
   "journal"
   "notes"
+  "sources"
   "subjects"
   "system"
 )

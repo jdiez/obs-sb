@@ -17,8 +17,10 @@ An Obsidian vault organized as a second brain using the **Properties** pattern. 
 │       ├── MM/     # Daily entries per month: YYYY-MM-DD.md
 │       ├── weekly/ # Weekly summaries: YYYY-[W]WW.md
 │       └── monthly/# Monthly reviews: YYYY-MM.md
+├── sources/        # Immutable originals — raw documents before processing
 ├── categories/     # Container notes: "what type of note is this?"
 ├── subjects/       # Container notes: "what is this note about?"
+├── index.md        # Auto-generated vault catalog — DO NOT edit manually
 └── system/         # Engine room
     ├── templates/  # One template per note type
     ├── attachments/# Images, PDFs, media
@@ -33,6 +35,8 @@ An Obsidian vault organized as a second brain using the **Properties** pattern. 
 4. **Categories and subjects use `[[wikilinks]]`** in YAML — this powers Dataview queries.
 5. **Never create subfolders in `notes/`.** If something needs grouping, create a category or subject.
 6. **Auto-update today's journal on every note change.** Whenever a note is created or modified, append a brief entry to today's daily journal (`journal/YYYY/MM/YYYY-MM-DD.md`) summarizing what was added or changed. Create the journal file from template if it doesn't exist. This happens automatically — no explicit request needed.
+7. **Preserve originals in `sources/`.** When processing inbox items, copy the raw original to `sources/` before transforming. The processed note in `notes/` gets a `source-file` YAML property linking back: `source-file: "[[sources/Original Filename]]"`. Never modify files in `sources/`.
+8. **Keep index.md current.** After creating or modifying a note, update the corresponding entry in `index.md` (add new entries, update summaries). The file is fully rebuilt on session start, but should be kept accurate during a session.
 
 ## YAML Frontmatter Convention
 
@@ -79,7 +83,7 @@ allDay: false                    # true for all-day, false for timed events
 ## Working With This Vault
 
 - **Creating notes:** Apply a template from `system/templates/` — it pre-fills the correct category and properties.
-- **Processing inbox:** Read files in `inbox/`, assign categories/subjects, move to `notes/`.
+- **Processing inbox:** Read files in `inbox/`. First, copy the original to `sources/`. Then assign categories/subjects, add YAML frontmatter with `source-file` property, and move the processed version to `notes/`.
 - **Bulk updates:** Update properties across multiple notes using Grep to find targets, then Edit.
 - **Journal summaries:** Read daily entries from `journal/YYYY/MM/` for a date range, produce weekly/monthly summary.
 - **Project management:** Projects, task items, and meetings are linked via `project` property. Projects use the `people` property — use `[[Contact Name]]` wikilinks to link relevant contacts. See `system/pages/Project Board.md` for the dashboard. Projects use lean statuses: `backlog` → `planning` → `active` → `on-hold` → `done` → `archived`.
@@ -93,6 +97,7 @@ allDay: false                    # true for all-day, false for timed events
 
 ## Session Start Checklist
 
+0. (Automatic) `index.md` is rebuilt from `notes/` frontmatter
 1. Check `inbox/` for unprocessed notes
 2. Surface today's calendar items (meetings, tasks with today's date)
 3. Flag overdue tasks (due-date past, status not done)
@@ -116,6 +121,78 @@ allDay: false                    # true for all-day, false for timed events
 - **Lessons → Permanent Notes:** When weekly/monthly reviews reveal recurring themes or validated insights, extract them into Permanent Notes in `notes/` with appropriate subjects.
 - **Retrospectives:** When a project moves to `done`, create a retrospective section summarizing: what worked, what didn't, what to do differently. Tag with `[[Retrospectives]]` subject.
 - **Reading integration:** Literature notes should link to relevant projects/goals via subjects when applicable, creating a feedback loop between learning and doing.
+
+## Query-to-Note Workflow
+
+When answering a question that meets ANY of these criteria, offer to create a permanent note from the answer:
+- Synthesizes information from **3 or more** existing notes
+- Reveals a **non-obvious connection** between notes from different subjects
+- Produces an **original framework, taxonomy, or comparison** not found in any single source
+- Answers a question the user is likely to ask again
+
+**How to offer:** After delivering the answer, append: *"This synthesis spans [N] sources and could be a useful permanent note. Want me to save it as `[Suggested Title]`?"*
+
+**If accepted:** Create a note in `notes/` using the Permanent Note template. Set `subjects` from the source notes' subjects. Add a `## Synthesis Sources` section linking to each source note with `[[wikilinks]]`. Set `status: ready`.
+
+## Cognitive Governance
+
+Epistemic quality rules that ensure the vault accumulates genuine understanding, not just information.
+
+### Literature Notes
+- Must identify the **core claim** of the source AND **what it argues against** (the counterfactual or prior consensus it challenges). If the source doesn't argue against anything, state that explicitly.
+- When ingesting a source that overlaps with existing notes, state explicitly: what is **confirmed**, what is **challenged**, and what is **new**.
+
+### Permanent Notes
+- Must link to **2 or more notes from different subjects**. A permanent note that only connects within one subject is probably still a literature note.
+- The "Idea" section must be expressible in **one sentence**. If it takes a paragraph, it needs splitting.
+
+### Weekly Reflections
+- Must surface at least one **tension or contradiction** between notes or ideas encountered that week. If none exist, say so explicitly — but look harder first.
+- Should identify one **belief that was updated** during the week and what updated it.
+
+### Ingestion of Overlapping Sources
+- When processing a new source that covers a topic already in the vault, structure the analysis as:
+  1. **Confirmed:** What does this source corroborate from existing notes?
+  2. **Challenged:** What does this source contradict or qualify?
+  3. **New:** What information or perspective is genuinely novel?
+- Link to the existing notes being confirmed/challenged using `[[wikilinks]]`.
+
+## Deep Ingestion Cascade
+
+When a new note is created (not modified), perform a scoped cascade to update related existing notes:
+
+### Trigger
+- Fires after creating a new note in `notes/` (not journal entries, not inbox items).
+
+### Cascade Steps
+1. **Identify candidates:** Find notes in `index.md` that share **2 or more subjects** with the new note. If the new note has only 1 subject, find notes sharing that subject AND having a `summary` that overlaps thematically.
+2. **Filter:** Only update notes with status `ready` or `in-progress`. Never touch `archived` notes. Maximum **5 notes** per cascade.
+3. **For each candidate:**
+   - Add a cross-reference in the candidate's `## Connections` or `## Related Notes` section: `- [[New Note Title]] — one-line reason for the link`
+   - If the new note introduces a concept that the candidate discusses but doesn't name, add a brief mention.
+   - Do NOT rewrite existing content. Only append cross-references.
+4. **Update index.md** to reflect any summary changes.
+5. **Journal the cascade:** In today's journal entry, note which notes were updated and why, under the new note's journal log.
+
+### Limits
+- Never cascade from a cascade (no recursive updates).
+- If more than 5 candidates match, pick the 5 with the most subject overlap.
+- If unsure whether a cross-reference is valuable, skip it. Err on the side of fewer, higher-quality links.
+
+## Wiki Lint
+
+Structural and semantic health-checks that run periodically to maintain vault integrity.
+
+### Automatic Checks (SessionStart hook)
+The `wiki-lint.sh` hook runs at session start and reports:
+- **Orphan notes:** Notes with no inbound `[[wikilinks]]` from other notes (categories/subjects/index.md are excluded). Consider adding cross-references or archiving.
+- **Stale in-progress:** Notes stuck at `status: in-progress` for 30+ days. Update status or add new content.
+
+### Semantic Checks (LLM-driven, during reviews)
+During weekly or monthly reviews, also check for:
+- **Missing cross-references:** Notes sharing 2+ subjects but not linking to each other. Add cross-references where the connection is substantive.
+- **Concept candidates:** Terms or ideas mentioned in 3+ notes that lack their own note or subject page. Offer to create a Permanent Note or subject container.
+- **Contradictions:** Notes making incompatible claims about the same topic. Flag in the weekly review and create a resolution note if warranted.
 
 ## Status Hygiene
 
