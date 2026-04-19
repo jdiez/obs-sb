@@ -24,7 +24,7 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/) template for generating a
 ## What You Get
 
 - **18 note templates** (Literature Notes, Projects, Tasks, Meetings, Goals, Contacts, and more)
-- **16 category containers** with Dataview queries
+- **15 category containers** with Dataview queries
 - **7 starter subject containers** (AI, Business, Psychology, Philosophy, Health, Productivity, Creativity) + add your own via `extra_subjects`
 - **Dashboard pages** (Project Board, Reading List, Contacts Board, Goals Board, Meetings This Week, Recently Modified) in both Dataview and Bases formats
 - **Dataview Cheatsheet** with 10 ready-to-use queries (recent notes, orphan notes, overdue tasks, and more)

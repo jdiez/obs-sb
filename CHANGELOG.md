@@ -6,8 +6,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- **Raw Sources Archive** (`sources/` directory): immutable archive for original documents. Inbox processing now copies originals to `sources/` before transforming to `notes/`. Core Rule #7 in CLAUDE.md. `source-file` YAML property links processed notes back to their original.
-- **LLM Navigation Index** (`build-index.sh` SessionStart hook): auto-generates `index.md` at vault root cataloging all notes by category with one-line summaries. Enables fast LLM navigation without glob/grep. Core Rule #8 in CLAUDE.md.
+- **Journal-to-Note Bidirectional Linking** (Core Rule #7): every note gets a `journal` YAML property linking to the daily journal entry that recorded its creation/change, creating bidirectional navigation between notes and their temporal context.
+- **Raw Sources Archive** (`sources/` directory): immutable archive for original documents. Inbox processing now copies originals to `sources/` before transforming to `notes/`. Core Rule #8 in CLAUDE.md. `source-file` YAML property links processed notes back to their original.
+- **LLM Navigation Index** (`build-index.sh` SessionStart hook): auto-generates `index.md` at vault root cataloging all notes by category with one-line summaries. Enables fast LLM navigation without glob/grep. Core Rule #9 in CLAUDE.md.
 - **Wiki Lint** (`wiki-lint.sh` SessionStart hook): structural health-check detecting orphan notes (no inbound links) and stale in-progress notes (30+ days). CLAUDE.md documents additional LLM-driven semantic checks during reviews.
 - **Query-to-Note Workflow** (CLAUDE.md section): when an answer synthesizes 3+ sources or reveals non-obvious connections, offer to save as a permanent note with synthesis sources.
 - **Cognitive Governance** (CLAUDE.md section + template updates): epistemic quality rules for Literature Notes (core claim + what it argues against), Permanent Notes (cross-subject linking), Weekly Reflections (tensions/contradictions, updated beliefs), and overlapping source ingestion (confirmed/challenged/new structure).

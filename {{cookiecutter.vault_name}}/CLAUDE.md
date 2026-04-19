@@ -34,9 +34,10 @@ An Obsidian vault organized as a second brain using the **Properties** pattern. 
 3. **Every note has YAML frontmatter** with `categories`, `subjects`, `status`, and `type` properties.
 4. **Categories and subjects use `[[wikilinks]]`** in YAML — this powers Dataview queries.
 5. **Never create subfolders in `notes/`.** If something needs grouping, create a category or subject.
-6. **Auto-update today's journal on every note change.** Whenever a note is created or modified, append a brief entry to today's daily journal (`journal/YYYY/MM/YYYY-MM-DD.md`) summarizing what was added or changed. Create the journal file from template if it doesn't exist. This happens automatically — no explicit request needed.
-7. **Preserve originals in `sources/`.** When processing inbox items, copy the raw original to `sources/` before transforming. The processed note in `notes/` gets a `source-file` YAML property linking back: `source-file: "[[sources/Original Filename]]"`. Never modify files in `sources/`.
-8. **Keep index.md current.** After creating or modifying a note, update the corresponding entry in `index.md` (add new entries, update summaries). The file is fully rebuilt on session start, but should be kept accurate during a session.
+6. **Auto-update today's journal on every note change.** Whenever a note is created or modified, append a brief entry to today's daily journal (`journal/YYYY/MM/YYYY-MM-DD.md`) summarizing what was added or changed. Use `[[wikilinks]]` to link to the note being referenced (e.g., `[[Note Title|display text]]`). Create the journal file from template if it doesn't exist. This happens automatically — no explicit request needed.
+7. **Every note links to its journal entry.** When creating or modifying a note, add a `journal` property in the YAML frontmatter linking to today's daily journal: `journal: "[[YYYY-MM-DD]]"`. This creates a bidirectional link between the note and the journal entry that recorded its creation/change.
+8. **Preserve originals in `sources/`.** When processing inbox items, copy the raw original to `sources/` before transforming. The processed note in `notes/` gets a `source-file` YAML property linking back: `source-file: "[[sources/Original Filename]]"`. Never modify files in `sources/`.
+9. **Keep index.md current.** After creating or modifying a note, update the corresponding entry in `index.md` (add new entries, update summaries). The file is fully rebuilt on session start, but should be kept accurate during a session.
 
 ## YAML Frontmatter Convention
 
