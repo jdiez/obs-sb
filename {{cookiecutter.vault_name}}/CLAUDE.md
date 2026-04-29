@@ -63,7 +63,7 @@ created: YYYY-MM-DD
 - `subjects` — links to files in `subjects/` (topic: AI, Business, etc.). **Subjects are topical only** — never put people here.
 - `people` — links to contact notes in `notes/` (people involved: attendees, collaborators, etc.). Use `[[Contact Name]]` wikilinks.
 - `status` — lifecycle stage
-- `created` — date the note was created (auto-filled by Templater's `{{date:YYYY-MM-DD}}`)
+- `created` — date the note was created (auto-filled by Templater's `{% raw %}{{date:YYYY-MM-DD}}{% endraw %}`)
 - `type` — machine-readable type slug. **Exception:** Any note that must appear on the Full Calendar (meetings, scheduled tasks, events) uses `type: single`. Use `categories` to distinguish them (e.g., `[[Meetings]]`, `[[Task Items]]`).
 
 ### Full Calendar Fields (required for calendar visibility)

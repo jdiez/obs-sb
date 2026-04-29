@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2026-04-29
+
+### Added
+
+- **Skills** (3 new Claude Code skills in `.claude/skills/`):
+  - `inbox-process`: User-invocable skill (`/inbox-process`) for mid-session inbox processing — classifies files, adds YAML frontmatter, copies originals to `sources/`, moves processed versions to `notes/`, runs Deep Ingestion Cascade
+  - `weekly-review`: User-invocable skill (`/weekly-review`) for generating weekly summaries from daily journal entries — highlights, challenges, learnings, cognitive governance checks, wiki lint semantic checks
+  - `vault-conventions`: Claude-only background skill (not user-invocable) that provides vault convention context — frontmatter structure, file naming, cognitive governance rules, calendar visibility requirements
+- **Subagents** (2 new Claude Code agents in `.claude/agents/`):
+  - `vault-linker`: Runs the Deep Ingestion Cascade in parallel — finds notes sharing 2+ subjects with a new note and adds cross-references to up to 5 related existing notes without consuming main conversation context
+  - `note-reviewer`: Read-only quality assurance agent that reviews notes against vault conventions and cognitive governance rules — checks frontmatter, core claims, cross-references, reference URLs, and orphan status
+- **PreToolUse hooks** (template protection): Blocks Edit and Write operations on `system/templates/` files, requiring explicit user approval before modifying templates
+- **PostToolUse hooks** (auto-rebuild index): Automatically rebuilds `index.md` when any file in `notes/` is created or modified via Write or Edit, keeping the LLM navigation index current during sessions
+- `journal-reminder.sh` hook: PostToolUse hook that prompts Claude to update today's journal whenever a note in `notes/` is changed (previously only in root `.claude/` for project development, now in the generated vault template)
+
+### Changed
+
+- `.claude/settings.json`: expanded from SessionStart/SessionEnd-only hooks to include PreToolUse (template protection) and PostToolUse (journal reminders + index rebuild) hooks
+- Fixed Jinja2 rendering error for `{{date:YYYY-MM-DD}}` in CLAUDE.md by wrapping Templater syntax in `{% raw %}` tags
+
 ## [1.9.0] - 2026-04-19
 
 ### Added
