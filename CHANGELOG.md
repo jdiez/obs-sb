@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2026-05-05
+
+### Added
+
+- **Obsidian Agent Skills** (5 from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)):
+  - `obsidian-markdown`: Obsidian Flavored Markdown reference — wikilinks, embeds, callouts, properties, block IDs, comments
+  - `obsidian-bases`: Bases `.base` file YAML schema — filters, formulas, views (table/cards/list/map), summaries
+  - `json-canvas`: JSON Canvas `.canvas` file format — nodes, edges, groups, connections
+  - `obsidian-cli`: Obsidian CLI commands — vault interaction, note CRUD, search, plugin development, screenshots
+  - `defuddle`: Clean web page extraction to markdown — token-efficient alternative to raw fetch
+- **Agent Skills documentation** in template CLAUDE.md — table listing all 8 skills (5 kepano + 3 custom) with use-case triggers
+
+### Changed
+
+- README updated to reflect 8 total skills (was 3)
+- Template `.claude/skills/` now ships with 8 skills instead of 3
+
 ## [2.0.0] - 2026-04-29
 
 ### Added

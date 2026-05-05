@@ -96,6 +96,26 @@ allDay: false                    # true for all-day, false for timed events
 - **Core:** Templates, Graph, Backlinks, Sync, Bases (`.base` files only)
 - **Community (required):** dataview (powers all inline queries in category/subject pages), obsidian-tasks-plugin, templater-obsidian, obsidian-full-calendar (visual calendar from note dates), periodic-notes (year-based journal folders for daily/weekly/monthly)
 
+## Agent Skills (`.claude/skills/`)
+
+Installed from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) (Agent Skills spec):
+
+| Skill | Use When |
+|-------|----------|
+| `obsidian-markdown` | Creating/editing `.md` files — wikilinks, embeds, callouts, properties, block IDs |
+| `obsidian-bases` | Creating/editing `.base` files — filters, formulas, views, summaries |
+| `json-canvas` | Creating/editing `.canvas` files — nodes, edges, groups |
+| `obsidian-cli` | Interacting with running Obsidian instance — read, search, plugin dev |
+| `defuddle` | Extracting clean markdown from web pages (prefer over WebFetch for HTML) |
+
+Custom vault skills (project-specific):
+
+| Skill | Use When |
+|-------|----------|
+| `vault-conventions` | Frontmatter, wikilinks, naming, templates — vault-specific rules |
+| `inbox-process` | Processing new items in `inbox/` |
+| `weekly-review` | Generating weekly summaries |
+
 ## Session Start Checklist
 
 0. (Automatic) `index.md` is rebuilt from `notes/` frontmatter
