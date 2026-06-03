@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2026-06-03
+
+### Added
+
+- **Table of Contents convention** in template CLAUDE.md — notes with 5+ `##` headings must include a `## Table of Contents` using Obsidian `[[#Heading]]` wikilink syntax for internal navigation
+
 ## [2.1.0] - 2026-05-05
 
 ### Added

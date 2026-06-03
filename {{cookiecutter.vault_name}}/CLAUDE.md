@@ -262,6 +262,25 @@ AI, Business, Psychology, Philosophy, Health, Productivity, Creativity
 - Journal weekly: `YYYY-[W]WW.md`
 - Journal monthly: `YYYY-MM.md`
 
+## Table of Contents in Notes
+
+- Every note with **5 or more `##` headings** must include a `## Table of Contents` section immediately after the H1 title.
+- Use Obsidian wikilink heading syntax: `[[#Heading Name]]` — this is the only format that works for internal navigation in Obsidian.
+- Use a numbered list for top-level sections (`##`), with tab-indented sub-items for subsections (`###`).
+- The TOC heading names must match the actual heading text exactly (case-sensitive, including special characters).
+
+Example:
+
+```markdown
+## Table of Contents
+
+1. [[#Overview]]
+2. [[#Architecture]]
+	- [[#Components]]
+	- [[#Data Flow]]
+3. [[#References]]
+```
+
 ## References in Notes
 
 - When a note cites external sources (papers, articles, tools), include a `## References` section at the bottom.
