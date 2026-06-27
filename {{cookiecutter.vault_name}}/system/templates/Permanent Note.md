@@ -17,6 +17,10 @@ created: {{date:YYYY-MM-DD}}
 
 ## Implications
 
+## Open Questions
+
+- 
+
 ## Related Notes
 
 - (must link 2+ notes from different subjects)

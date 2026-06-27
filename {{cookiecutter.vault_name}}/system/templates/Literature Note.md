@@ -27,6 +27,10 @@ created: {{date:YYYY-MM-DD}}
 
 >
 
+## Open Questions
+
+- 
+
 ## Connections
 
 - Confirms:

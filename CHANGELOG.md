@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0] - 2026-06-27
+
+### Added
+
+- **Comparisons category and template** — new `type: comparison` for structured side-by-side analyses. Includes dimensions table, verdict/synthesis section, `compared-items` frontmatter field
+- **Open Questions tracking** — `## Open Questions` section added to Literature Note and Permanent Note templates. Dashboard page at `system/pages/Open Questions.md` surfaces notes with unresolved research questions via Dataview
+- **Machine-readable index (index.yaml)** — `build-index.sh` now generates `index.yaml` alongside `index.md`. YAML format enables agent progressive drilldown retrieval (scan summaries → open only relevant notes). Token-efficient alternative to loading full notes
+- **`/vault-research` skill** — vault-native research skill with three modes: query (answer from existing notes using progressive drilldown), append (ingest external sources as governed Literature Notes), init (seed a new research topic). Outputs proper frontmatter, runs cognitive governance checks, integrates with Deep Ingestion Cascade
+
+### Changed
+
+- Template CLAUDE.md updated with index.yaml documentation, open questions section, comparisons documentation, and vault-research skill in Agent Skills table
+- README updated to reflect 19 templates (was 18), 16 categories (was 15), 9 skills (was 8)
+- `build-index.sh` hook now outputs dual format (index.md + index.yaml)
+- Existing Categories list includes Comparisons
+- Vault structure diagram includes index.yaml
+
 ## [2.2.0] - 2026-06-03
 
 ### Added

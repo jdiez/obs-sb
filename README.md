@@ -23,13 +23,13 @@ A [cookiecutter](https://cookiecutter.readthedocs.io/) template for generating a
 
 ## What You Get
 
-- **18 note templates** (Literature Notes, Projects, Tasks, Meetings, Goals, Contacts, and more)
-- **15 category containers** with Dataview queries
+- **19 note templates** (Literature Notes, Projects, Tasks, Meetings, Goals, Contacts, Comparisons, and more)
+- **16 category containers** with Dataview queries
 - **7 starter subject containers** (AI, Business, Psychology, Philosophy, Health, Productivity, Creativity) + add your own via `extra_subjects`
 - **Dashboard pages** (Project Board, Reading List, Contacts Board, Goals Board, Meetings This Week, Recently Modified) in both Dataview and Bases formats
 - **Dataview Cheatsheet** with 10 ready-to-use queries (recent notes, orphan notes, overdue tasks, and more)
 - **Review Checklist** for weekly, monthly, and quarterly reviews
-- **Claude Code integration** (optional) with CLAUDE.md context files, automatic inbox processing hooks, auto-journaling on every note change, self-healing review reminders, auto-generated journal reflections, LLM navigation index, wiki lint (orphan/stale detection), raw sources archive, deep ingestion cascades, query-to-note workflow, cognitive governance rules, template protection hooks, 8 skills (5 from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills): `obsidian-markdown`, `obsidian-bases`, `json-canvas`, `obsidian-cli`, `defuddle` + 3 custom: `/inbox-process`, `/weekly-review`, `vault-conventions`), and 2 subagents (`vault-linker`, `note-reviewer`)
+- **Claude Code integration** (optional) with CLAUDE.md context files, automatic inbox processing hooks, auto-journaling on every note change, self-healing review reminders, auto-generated journal reflections, dual LLM navigation index (`index.md` + `index.yaml` for agent progressive drilldown), wiki lint (orphan/stale detection), raw sources archive, deep ingestion cascades, query-to-note workflow, cognitive governance rules, open questions tracking, template protection hooks, 9 skills (5 from [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills): `obsidian-markdown`, `obsidian-bases`, `json-canvas`, `obsidian-cli`, `defuddle` + 4 custom: `/inbox-process`, `/weekly-review`, `/vault-research`, `vault-conventions`), and 2 subagents (`vault-linker`, `note-reviewer`)
 - **3 sample notes** (Literature Note, Project, Meeting) showing proper frontmatter patterns
 - **CSS snippets** for Dataview table styling
 - **Journal scaffolding** with year-based hierarchy (daily, weekly, monthly)

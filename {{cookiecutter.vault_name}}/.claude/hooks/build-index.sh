@@ -120,4 +120,69 @@ done
   done < <(find "${TMPDIR_IDX}" -name "*.cat" -print | sort)
 } > "$INDEX_FILE"
 
-echo "INDEX: Rebuilt index.md — ${NOTE_COUNT} notes across ${CAT_COUNT} categories."
+# Build index.yaml (machine-readable catalog for agent progressive drilldown)
+YAML_FILE="${VAULT_ROOT}/index.yaml"
+{
+  echo "# Machine-readable vault index — auto-generated, do not edit manually"
+  echo "# Agents read this first for token-efficient retrieval before opening full notes"
+  echo "generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  echo "note_count: ${NOTE_COUNT}"
+  echo "notes:"
+
+  for note in "$NOTES_DIR"/*.md; do
+    BASENAME="$(basename "$note" .md)"
+    [[ "$BASENAME" == "CLAUDE" ]] && continue
+    [[ ! -f "$note" ]] && continue
+
+    NOTE_CATEGORY=""
+    NOTE_SUMMARY=""
+    NOTE_STATUS=""
+    NOTE_TYPE=""
+    NOTE_SUBJECTS=""
+    IN_FM2=false
+    IN_CATS2=false
+    IN_SUBS2=false
+
+    while IFS= read -r line; do
+      if [[ "$line" == "---" ]]; then
+        if $IN_FM2; then break; fi
+        IN_FM2=true
+        continue
+      fi
+      $IN_FM2 || continue
+
+      if [[ "$line" =~ ^categories: ]]; then IN_CATS2=true; IN_SUBS2=false; continue; fi
+      if [[ "$line" =~ ^subjects: ]]; then IN_SUBS2=true; IN_CATS2=false; continue; fi
+      if [[ "$line" =~ ^[a-zA-Z] ]] && ! [[ "$line" =~ ^[[:space:]]*- ]]; then
+        IN_CATS2=false; IN_SUBS2=false
+      fi
+
+      if $IN_CATS2 && [[ -z "$NOTE_CATEGORY" ]]; then
+        if [[ "$line" =~ \[\[([^\]]+)\]\] ]]; then NOTE_CATEGORY="${BASH_REMATCH[1]}"; fi
+      fi
+      if $IN_SUBS2; then
+        if [[ "$line" =~ \[\[([^\]]+)\]\] ]]; then
+          [[ -n "$NOTE_SUBJECTS" ]] && NOTE_SUBJECTS="${NOTE_SUBJECTS}, "
+          NOTE_SUBJECTS="${NOTE_SUBJECTS}${BASH_REMATCH[1]}"
+        fi
+      fi
+      if [[ "$line" =~ ^summary:[[:space:]]*(.+)$ ]]; then
+        NOTE_SUMMARY="${BASH_REMATCH[1]}"
+        NOTE_SUMMARY="${NOTE_SUMMARY#\"}"
+        NOTE_SUMMARY="${NOTE_SUMMARY%\"}"
+      fi
+      if [[ "$line" =~ ^status:[[:space:]]*(.+)$ ]]; then NOTE_STATUS="${BASH_REMATCH[1]}"; fi
+      if [[ "$line" =~ ^type:[[:space:]]*(.+)$ ]]; then NOTE_TYPE="${BASH_REMATCH[1]}"; fi
+    done < "$note"
+
+    echo "  - title: \"${BASENAME}\""
+    echo "    path: \"notes/${BASENAME}.md\""
+    [[ -n "$NOTE_CATEGORY" ]] && echo "    category: \"${NOTE_CATEGORY}\""
+    [[ -n "$NOTE_SUBJECTS" ]] && echo "    subjects: [${NOTE_SUBJECTS}]"
+    [[ -n "$NOTE_TYPE" ]] && echo "    type: \"${NOTE_TYPE}\""
+    [[ -n "$NOTE_STATUS" ]] && echo "    status: \"${NOTE_STATUS}\""
+    [[ -n "$NOTE_SUMMARY" ]] && echo "    summary: \"${NOTE_SUMMARY}\""
+  done
+} > "$YAML_FILE"
+
+echo "INDEX: Rebuilt index.md + index.yaml — ${NOTE_COUNT} notes across ${CAT_COUNT} categories."
